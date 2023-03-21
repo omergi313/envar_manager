@@ -8,6 +8,8 @@ This utility allows you to store your team's .env files in the cloud and utilize
 cd path/to/project/
 git clone https://github.com/omergi313/envar_manager.git
 export ENVFILE_PATH="gs://path/to/.env"
+or
+export ENVFILE_PATH="s3://path/to/.env"
 ```
 In python script:
 ```Python
