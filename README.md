@@ -10,3 +10,4 @@ In python script:
 ```Python
 import envar_manager
 ```
+Now use os.environ / os.getenv as usual.
