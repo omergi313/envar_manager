@@ -4,8 +4,8 @@ This utility allows you to store your team's .env files in the cloud and utilize
 
 # prerequisite:
 * user is authenticated with cloud provider
-* user has configured a default cloud profile (.aws/credentials or gcloud init)
-* user has access to the bucket where the .env file is stored
+* user has configured a default cloud profile (<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">.aws/credentials</a> or <a href="https://cloud.google.com/sdk/gcloud/reference/init">gcloud init</a>)
+* user has read-level access to the bucket where the .env file is stored
 
 # Usage:
 ```Bash
