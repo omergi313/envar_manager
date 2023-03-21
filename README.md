@@ -16,3 +16,8 @@ In python script:
 import envar_manager
 ```
 Now use os.environ / os.getenv as usual.
+
+
+# TODO:
+* add support for Docker
+* add support for Kubernetes
