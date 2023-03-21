@@ -7,13 +7,7 @@ class AmazonCloudStorage(CloudStorageProvider):
         self.client = client('s3')
 
     def get_envfile(self, envfile_path: str) -> str:
-        # Implementation for Google Cloud Storage
-        pass
-
-    def download_file(self, bucket_name: str, remote_file_path: str, local_file_path: str):
-        # Implementation for Amazon Cloud Storage
-        pass
-
-    def delete_file(self, bucket_name: str, remote_file_path: str):
-        # Implementation for Amazon Cloud Storage
-        pass
+        bucket = envfile_path.split('/')[2]
+        key = envfile_path.split(bucket)[1][1:]
+        print(bucket, key)
+        return self.client.get_object(Bucket=bucket, Key=key)['Body']

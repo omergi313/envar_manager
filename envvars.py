@@ -29,5 +29,6 @@ def main():
     import os
 
     path = os.getenv("ENVFILE_PATH")
+    print(f"ENVFILE_PATH: {path}")
     manager = Manager(path)
     manager.load()

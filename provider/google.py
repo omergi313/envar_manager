@@ -7,7 +7,6 @@ class GoogleCloudStorage(CloudStorageProvider):
         self.client = storage.Client()
 
     def get_envfile(self, envfile_path: str) -> io.BytesIO:
-        # Implementation for Google Cloud Storage
         bucket_name = envfile_path.split('/')[2]
         bucket = self.client.get_bucket(bucket_name)
 
@@ -18,11 +17,3 @@ class GoogleCloudStorage(CloudStorageProvider):
 
         blob.download_to_file(file_obj)
         return file_obj
-
-    def download_file(self, bucket_name: str, remote_file_path: str, local_file_path: str):
-        # Implementation for Google Cloud Storage
-        pass
-
-    def delete_file(self, bucket_name: str, remote_file_path: str):
-        # Implementation for Google Cloud Storage
-        pass
