@@ -27,7 +27,7 @@ Now use os.environ / os.getenv as usual.
 * add users to bucket
 ```Bash
 cd envar_manager 
-source bin.sh
+pip install -e .
 envvar_manager init -p path/to/.env --users joe@company.com dave@company.com
 ```
 
