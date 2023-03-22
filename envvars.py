@@ -1,6 +1,8 @@
-from .provider import CloudStorageProvider, GoogleCloudStorage, AmazonCloudStorage
-from dotenv import load_dotenv
 import io
+
+from dotenv import load_dotenv
+
+from .provider import CloudStorageProvider, GoogleCloudStorage, AmazonCloudStorage
 
 
 class Manager:
@@ -20,15 +22,19 @@ class Manager:
             return GoogleCloudStorage()
         elif self.envfile_path.startswith('s3://'):
             return AmazonCloudStorage()
+        else:
+            return CloudStorageProvider()
 
     def load(self):
-        load_dotenv(stream=self.envfile_stream)
+        if isinstance(self.envfile_stream, io.StringIO):
+            load_dotenv(stream=self.envfile_stream, override=True)
+        else:
+            raise ValueError('envfile_stream is not a StringIO')
+
 
 def main():
-
     import os
 
     path = os.getenv("ENVFILE_PATH")
-    print(f"ENVFILE_PATH: {path}")
     manager = Manager(path)
     manager.load()

@@ -1,6 +1,9 @@
-from google.cloud import storage
-from .cloud_provider import CloudStorageProvider
 import io
+
+from google.cloud import storage
+
+from .cloud_provider import CloudStorageProvider
+
 
 class GoogleCloudStorage(CloudStorageProvider):
     def __init__(self):
