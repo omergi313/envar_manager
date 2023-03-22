@@ -9,8 +9,7 @@ This utility allows you to store your team's .env files in the cloud and utilize
 
 # Usage:
 ```Bash
-cd path/to/project/
-git clone https://github.com/omergi313/envar_manager.git
+pip install envvar-manager
 export ENVFILE_PATH="gs://path/to/.env"
 or
 export ENVFILE_PATH="s3://path/to/.env"
@@ -26,8 +25,6 @@ Now use os.environ / os.getenv as usual.
 * create bucket for .env file
 * add users to bucket
 ```Bash
-cd envar_manager 
-pip install -e .
 envvar_manager init -p path/to/.env --users joe@company.com dave@company.com
 ```
 
