@@ -15,11 +15,18 @@ export ENVFILE_PATH="gs://path/to/.env"
 or
 export ENVFILE_PATH="s3://path/to/.env"
 ```
-In python script:
+## In python script:
 ```Python
 import envar_manager
 ```
 Now use os.environ / os.getenv as usual.
+
+## As admin:
+```Bash
+cd envar_manager 
+source bin.sh
+envvar_manager init -p path/to/.env --users joe@company.com dave@company.com
+```
 
 
 # TODO:
