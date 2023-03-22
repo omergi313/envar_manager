@@ -22,6 +22,9 @@ import envar_manager
 Now use os.environ / os.getenv as usual.
 
 ## As admin:
+* will authenticate with client
+* create bucket for .env file
+* add users to bucket
 ```Bash
 cd envar_manager 
 source bin.sh
